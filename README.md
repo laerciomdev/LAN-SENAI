@@ -1,4 +1,4 @@
-# 😷 LAN-SENAI
+# 💻 LAN-SENAI
 > Sistema para Lan houses. 
 
 Através de um painel de computador dê acesso remoto a máquinas para seus clientes.
