@@ -13,7 +13,7 @@ Esta aplicação visa construir um sistema de lan house com intuito de concluir 
 
 ## ✒️ Justificativa
 
-Atividade da matéria de Desenvolvimento de Sistemas II do SENAI, ministrada pelo professsor .
+Atividade da matéria de Desenvolvimento de Sistemas II do SENAI, ministrada pelo professsor Leandro.
 
 ## 👷 Instalação
 
