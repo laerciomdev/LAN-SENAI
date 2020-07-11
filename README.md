@@ -32,7 +32,7 @@ Foto | Nome | GitHub | Likedin | E-mail
 ## 📃 Licença
 
 Lançado em 2020.
-Este projeto está sob a [Licença MIT](./LICENSE.md).
+Este projeto está sob a [Licença MIT](./LICENSE).
 
 ## ✉️ Commmit
 
