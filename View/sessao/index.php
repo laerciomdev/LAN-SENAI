@@ -17,9 +17,8 @@
 </head>
 
 <body>
-    <a href="../cadastroCliente/index.php" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
-    
-    <a href="../sessao/index.php" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add_to_queue</i></a>
+
+    <form method="POST" action="../../Controller/iniciarSessão">
 
 
 
