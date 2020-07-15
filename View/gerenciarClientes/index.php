@@ -1,11 +1,10 @@
 <?php require_once("../../Model/conexao.php") ?>
 <?php session_start(); ?>
-
 <?php
 
-$inserir_usuario = "SELECT * FROM `usuarios` WHERE usuarios.tempoSessao > 0";
+$inserir_Usuario = "SELECT * FROM usuarios INNER JOIN cargo ON usuarios.fk_cargo = cargo.idCargo";
 
-$operacao_inserir = mysqli_query($conectar, $inserir_usuario);
+$operacao_inserir = mysqli_query($conectar, $inserir_Usuario);
 
 if (!$operacao_inserir) {
     die("Erro no banco " . mysqli_errno($conectar));
@@ -25,31 +24,21 @@ if (!$operacao_inserir) {
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <title>Menu</title>
-<a href="../../controller/sair.php" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">exit_to_app</i></a><br>
-
+<a href="../ZonaAdmin/index.php">Voltar</a> <br>
 </head>
 
 <body>
-    <br>
 
-    <a href="../gerenciarClientes/index.php" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">group_add</i></a>
-
-    <a href="../gerenciarMaquinas/index.php" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add_to_queue</i></a>
-
-    <a href="../sessao/index.php" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">camera_front</i></a> <br><br><br>
-
-
-
-
+    <center>
+        <a href="cadastraCliente.php" class="waves-effect waves-light btn"><i class="material-icons right">control_point</i>Cadastrar Clientes</a>
+    </center>
 
     <table class="striped">
         <thead>
             <tr>
-                <th>Número da máquina</th>
-                <th>Usuário na máquina</th>
-                <th>Horário de termino</th>
-                <th></th>
-                <th></th>
+                <th>Login do Cliente</th>
+                <th>Nome completo</th>
+                <th>Nível de Acesso</th>
             </tr>
         </thead>
         <tbody>
@@ -58,24 +47,24 @@ if (!$operacao_inserir) {
             ?>
                 <tr>
 
-                    <td><?php echo $linha_select["fk_Maquina"] ?></td>
+                    <td><?php echo $linha_select["loginUsuario"] ?></td>
                     <td><?php echo $linha_select["nomeCompleto"] ?></td>
-                    <td><?php echo $linha_select["tempoSessao"] ?></td>
-
+                    <td><?php echo $linha_select["nomeCargo"] ?></td>
                     <td>
-                        <a href="../sessao/Crud/editarSessao.php?id=<?php echo $linha_select["idUsuario"] ?>"><i class="material-icons center">edit</i></a>
+                        <a href="crud/editar_Cliente.php?id=<?php echo $linha_select["idUsuario"]; ?>" type="button" class="btn btn-outline-warning">Editar</a>
                     </td>
-
                     <td>
-                        <a href="../sessao/Crud/encerraSessao.php?id=<?php echo $linha_select["idUsuario"] ?>"><i class="material-icons center">exit_to_app</i></a>
+                        <a href="crud/deletar_Cliente.php?id=<?php echo $linha_select["idUsuario"]; ?>" type="button" class="btn btn-outline-danger">Deletar</a>
                     </td>
-
-
 
                 </tr>
             <?php } ?>
         </tbody>
     </table>
+
+    <?php
+
+    ?>
 
 
     <!-- Jquery -->

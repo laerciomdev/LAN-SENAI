@@ -8,16 +8,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <!-- Materialize CSS-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <title>Menu</title>
+<a href="index.php">Voltar</a> <br>
 </head>
 
 <body>
-    <a href="../ZonaAdmin/index.php"> voltar <a/> <br>
     <div class="row">
         <div class="col-4"></div>
         <div class="col-4">
@@ -28,14 +27,14 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="material-icons prefix">account_circle</i></span>
                         </div>
-                        <input type="text" id="code" class="form-control" name="loginCliente" required="" placeholder="Login">
+                        <input type="text" id="code" class="form-control" name="loginUsuario" required="" placeholder="Login">
                     </div>
 
                     <div id="content" class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="material-icons prefix">https</i></span>
                         </div>
-                        <input type="password" id="code" class="form-control" name="senhaCliente" required="" placeholder="Senha">
+                        <input type="password" id="code" class="form-control" name="senhaUsuario" required="" placeholder="Senha">
                     </div><br>
 
                     <div id="content" class="input-group mb-3">
@@ -44,6 +43,11 @@
                         </div>
                         <input type="text" id="code" class="form-control" name="nomeCompleto" required="" placeholder="Nome Completo">
                     </div><br>
+
+                    <select name="cargo">
+                        <option value="1"> Administrador </option>
+                        <option value="2"> Cliente </option>
+                    </select><br><br>
 
                     <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar
                         <i class="material-icons right">send</i>

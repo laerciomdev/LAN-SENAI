@@ -39,14 +39,14 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1"><i class="material-icons prefix">account_circle</i></span>
                             </div>
-                            <input type="text" id="code" class="form-control" name="loginAdmin" placeholder="Login">
+                            <input type="text" id="code" class="form-control" name="loginUsuario" placeholder="Login">
                         </div>
 
                         <div id="content" class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1"><i class="material-icons prefix">https</i></span>
                             </div>
-                            <input type="password" id="code" class="form-control" name="senhaAdmin" placeholder="Senha">
+                            <input type="password" id="code" class="form-control" name="senhaUsuario" placeholder="Senha">
                         </div><br>
                         <a>
                             <button type="submit" class="btn btn-primary btn-lg">Acessar</button>

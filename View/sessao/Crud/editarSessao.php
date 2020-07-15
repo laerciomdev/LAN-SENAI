@@ -1,21 +1,28 @@
-<?php require_once("../../Model/conexao.php") ?>
+<?php require_once("../../../Model/Conexao.php") ?>
 <?php session_start(); ?>
-
 
 <?php
 
-$inserir_Sessao = "SELECT * FROM usuarios WHERE tempoSessao IS NULL AND fk_cargo = 2";
+$idUsuario = $_GET["id"];
 
-$operacao_inserir = mysqli_query($conectar, $inserir_Sessao);
+$inserir_Sessao1 = "SELECT * FROM usuarios
+INNER JOIN maquinas 
+ON usuarios.fk_Maquina = maquinas.idMaquina 
+WHERE usuarios.idUsuario = {$idUsuario}";
 
-if (!$operacao_inserir) {
+$operacao_inserir1 = mysqli_query($conectar, $inserir_Sessao1);
+
+$listar = mysqli_fetch_assoc($operacao_inserir1);
+
+if (!$operacao_inserir1) {
     die("Erro no banco " . mysqli_errno($conectar));
 }
+
 ?>
 
 <?php
 
-$inserir_Sessao2 = "SELECT * FROM maquinas WHERE statusMaquina = 'Ativo'";
+$inserir_Sessao2 = "SELECT * FROM maquinas";
 
 $operacao_inserir2 = mysqli_query($conectar, $inserir_Sessao2);
 
@@ -23,6 +30,36 @@ if (!$operacao_inserir2) {
     die("Erro no banco " . mysqli_errno($conectar));
 }
 ?>
+
+<?php
+
+if (isset($_POST["idMaquina"])) {
+
+
+    $idMaquina = $_POST["idMaquina"];
+    $tempoSessao = $_POST["tempoSessao"];
+
+
+
+    $alteracao =  "UPDATE usuarios ";
+    $alteracao .= "SET fk_Maquina = {$idMaquina}, tempoSessao = ADDTIME('{$tempoSessao}',tempoSessao) ";
+    $alteracao .= "WHERE idUsuario = {$idUsuario} ";
+
+    $operacao_alterar = mysqli_query($conectar, $alteracao);
+
+    if (!$operacao_alterar) {
+        die("Erro no banco" . mysqli_errno($conectar));
+    } else {
+        echo "<script language='javascript' type='text/javascript'>
+                   alert('Sessão Iniciada!')
+                   ;window.location.href='../../ZonaAdmin/index.php';</script>";
+    }
+}
+
+?>
+
+<!-- Inserção no Banco -->
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -35,27 +72,20 @@ if (!$operacao_inserir2) {
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <title>Menu</title>
-<a href="../ZonaAdmin/index.php">Voltar</a> <br>
+<a href="../../ZonaAdmin/index.php">Voltar</a> <br>
 </head>
 
 <body>
 
     <center>
-        <form method="post" action="../../Controller/iniciarSessao.php">
+        <form method="post">
 
             <select name="idUsuario">
-                <option disabled selected>Escolha um cliente</option>
-                <?php
-                while ($linha_select = mysqli_fetch_assoc($operacao_inserir)) {
-                ?>
-                    <option value="<?php echo $linha_select["idUsuario"] ?>"> <?php echo $linha_select["nomeCompleto"] ?> </option>
-                <?php
-                }
-                ?>
+                <option value="<?php echo $listar["idUsuario"] ?>"> <?php echo $listar["nomeCompleto"] ?> </option>
             </select><br><br>
 
             <select name="idMaquina">
-                <option disabled selected> Escolha uma Máquina  </option>
+                <option value="<?php echo $listar["idMaquina"] ?>"> <?php echo $listar["idMaquina"] ?> - <?php echo $listar["tipoMaquina"] ?> </option>
                 <?php
                 while ($linha_select2 = mysqli_fetch_assoc($operacao_inserir2)) {
                 ?>
@@ -65,7 +95,7 @@ if (!$operacao_inserir2) {
                 ?>
             </select> <br><br>
 
-            <input type="time" name="tempoSessao">
+            <input type="time" value="00:00:00" name="tempoSessao">
 
             <input type="submit" value="Iniciar sessão">
         </form>

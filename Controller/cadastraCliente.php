@@ -3,11 +3,12 @@
 
 <?php
 
-    $loginCliente = $_POST["loginCliente"];
-    $senhaCliente = $_POST["senhaCliente"];
+    $loginUsuario = $_POST["loginUsuario"];
+    $senhaUsuario = $_POST["senhaUsuario"];
     $nomeCompleto = $_POST["nomeCompleto"];
+    $cargo = $_POST["cargo"];
 
-    $inserir_produto = "INSERT INTO cliente (loginCliente, senhaCliente, nomeCompleto) VALUES ('$loginCliente','$senhaCliente','$nomeCompleto') ";
+    $inserir_produto = "INSERT INTO usuarios (loginUsuario, senhaUsuario, nomeCompleto, fk_cargo) VALUES ('$loginUsuario','$senhaUsuario','$nomeCompleto', $cargo) ";
 
     $operacao_inserir = mysqli_query($conectar, $inserir_produto);
 
@@ -16,6 +17,6 @@
     } else {
         echo "<script language='javascript' type='text/javascript'>
         alert('Cadastrado com Sucesso!')
-        ;window.location.href=' ../View/cadastroCliente/index.php';</script>";
+        ;window.location.href=' ../View/gerenciarClientes/index.php';</script>";
     }
 ?>

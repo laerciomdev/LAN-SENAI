@@ -3,11 +3,11 @@
 
 <?php
 
-if ((isset($_POST['loginAdmin'])) && (isset($_POST['senhaAdmin']))) {
-    $loginAdmin = mysqli_real_escape_string($conectar, $_POST['loginAdmin']);
-    $senhaAdmin = mysqli_real_escape_string($conectar, $_POST['senhaAdmin']);
+if ((isset($_POST['loginUsuario'])) && (isset($_POST['senhaUsuario']))) {
+    $loginUsuario = mysqli_real_escape_string($conectar, $_POST['loginUsuario']);
+    $senhaUsuario = mysqli_real_escape_string($conectar, $_POST['senhaUsuario']);
 
-    $query = "SELECT * FROM administrador WHERE loginAdmin = '$loginAdmin' && senhaAdmin = '$senhaAdmin'";
+    $query = "SELECT * FROM usuarios WHERE loginUsuario = '$loginUsuario' AND senhaUsuario = '$senhaUsuario'";
     $executar_query = mysqli_query($conectar, $query);
 
     if (!$executar_query) {
@@ -21,9 +21,9 @@ if ((isset($_POST['loginAdmin'])) && (isset($_POST['senhaAdmin']))) {
         alert('O campo login ou Senha deve ser preenchido')
         ;window.location.href='../View/index.php';</script>";
     } else {
-        $_SESSION['idAdmin']    = $result['idAdmin'];
-        $_SESSION['loginAdmin'] = $result['loginAdmin'];
-        $_SESSION['senhaAdmin'] = $result['senhaAdmin'];
+        $_SESSION['idUsuario']    = $result['idUsuario'];
+        $_SESSION['loginUsuario'] = $result['loginUsuario'];
+        $_SESSION['senhaUsuario'] = $result['senhaUsuario'];
         echo "<script language='javascript' type='text/javascript'>
         alert('Logado com Sucesso!')
         ;window.location.href='../View/ZonaAdmin/index.php';</script>";
