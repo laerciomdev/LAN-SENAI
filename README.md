@@ -23,11 +23,19 @@ Clone o repositório:
 git clone https://github.com/laerciomdev/LAN-SENAI.git
 ```
 
-## 👨🏼‍💻 Autor
+## 👨🏼‍💻 Autores
 
 Foto | Nome | GitHub | Likedin | E-mail
 ---- | ---- | ------ | ------- | ------
 <img src="https://avatars3.githubusercontent.com/u/56900657?s=400&u=39c5b951f067086b41ce462b29373765c2e39410&v=4" width="100px"> | Laércio Marques | [laerciomdev](https://github.com/laerciomdev) | [Linkedin](https://www.linkedin.com/in/la%C3%A9rcio-marques-967582196/) | laerciom99@gmail.com
+
+Foto | Nome | GitHub | Likedin | E-mail
+---- | ---- | ------ | ------- | ------
+<img src="https://avatars2.githubusercontent.com/u/60783491?s=460&u=80348c4fcf0246095cbe3dba420931b460dd5d05&v=4" width="100px"> | Rafael Vasques Freitas | [rafaoi27](https://github.com/rafaoi27) | [Linkedin](https://www.linkedin.com/in/rafael-vasques-068339195/) | rafaoi27@gmail.com
+
+Foto | Nome | GitHub | E-mail
+---- | ---- | ------ | ------
+<img src="https://avatars1.githubusercontent.com/u/58191082?s=460&v=4" width="100px"> | Walace Dilan | [walace268](https://github.com/walace268) | contato.walace.dilan@gmail.com
 
 ## 📃 Licença
 
