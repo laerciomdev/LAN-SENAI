@@ -1,4 +1,4 @@
-# 😷 LAN-SENAI
+# 💻 LAN-SENAI
 > Sistema para Lan houses. 
 
 Através de um painel de computador dê acesso remoto a máquinas para seus clientes.
@@ -13,7 +13,7 @@ Esta aplicação visa construir um sistema de lan house com intuito de concluir 
 
 ## ✒️ Justificativa
 
-Atividade da matéria de Desenvolvimento de Sistemas II do SENAI, ministrada pelo professsor .
+Atividade da matéria de Desenvolvimento de Sistemas II do SENAI, ministrada pelo professsor Leandro.
 
 ## 👷 Instalação
 
@@ -32,7 +32,7 @@ Foto | Nome | GitHub | Likedin | E-mail
 ## 📃 Licença
 
 Lançado em 2020.
-Este projeto está sob a [Licença MIT](./LICENSE.md).
+Este projeto está sob a [Licença MIT](./LICENSE).
 
 ## ✉️ Commmit
 
