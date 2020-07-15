@@ -21,7 +21,7 @@
     <title>Login</title>
 </head>
 
-<body class="body">
+<body class="body">  
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">

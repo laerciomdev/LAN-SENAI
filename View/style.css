@@ -1,10 +1,13 @@
 body{
     margin: 0 auto;
-    
+    background-image: url("../View/imagens/lanhouse.jpg");
+    background-size: 1380px 800px;
 }
 .body{
     background-color: #f5f5f5;
     padding-top: 15%;
+    background-image: url("../View/imagens/lanhouse.jpg");
+    background-size: 1380px 800px;
 }
 .container{
     width: 100%;
@@ -29,7 +32,17 @@ body{
     justify-content: center;
     display: inline-flex;
 }
+
 #code{
+    font-family: Abraham Lincoln,Bebas,Arial;
+      font-size: 15px;
+    padding-top: 1px;
+    color: white; 
+    background-color: rgba(0,0,5,0.5);
+      border-color: white;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
     width: 300px;
     display: inline-flex;
 }

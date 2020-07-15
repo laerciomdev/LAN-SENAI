@@ -13,7 +13,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <title>Menu</title>
-<a href="index.php">Voltar</a> <br>
+<form action="index.php">
+    <button style="margin: 10px; border-radius: 8px" type="submit"> Voltar</button> <br>
+</form>
 </head>
 
 <body>
@@ -29,20 +31,20 @@
                             <span class="input-group-text" id="basic-addon1"><i class="material-icons prefix">computer</i></span>
                         </div><br><br>
 
-                        <select name="tipoMaquina">
+                        <select style="margin: 10px; border-radius: 8px" name="tipoMaquina">
                             <option value="navegação">Navegação</option>
                             <option value="mídia">Mídia</option>
                             <option value="jogos">Jogos</option>
                         </select><br><br>
 
-                        <select name="statusMaquina">
+                        <select style="margin: 10px; border-radius: 8px" name="statusMaquina">
                             <option value="Ativo">Ativo</option>
                             <option value="Inoperante">Inoperante</option>
                         </select><br><br>
                     </div><br>
 
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar
-                        <i class="material-icons right">send</i>
+                    <button style="margin: 0 auto; border-radius: 8px " class="btn waves-effect waves-light" type="submit" name="action">Cadastrar
+
                     </button>
                 </form>
         </div>

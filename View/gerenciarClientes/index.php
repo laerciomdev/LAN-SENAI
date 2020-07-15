@@ -20,20 +20,25 @@ if (!$operacao_inserir) {
     <link rel="stylesheet" type="text/css" href="style.css">
     <!-- Materialize CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <title>Menu</title>
-<a href="../ZonaAdmin/index.php">Voltar</a> <br>
+<form action="../ZonaAdmin/index.php">
+    <button style="margin: 10px; border-radius: 8px " type="submit"> Voltar</button> <br>
+</form>
 </head>
 
 <body>
 
     <center>
-        <a href="cadastraCliente.php" class="waves-effect waves-light btn"><i class="material-icons right">control_point</i>Cadastrar Clientes</a>
+    <form method="POST" action="cadastraCliente.php">
+    <input type="submit" name="idUsuario" class="btn btn-outline-warning" value="Adicionar Cliente"> 
+    </form><br>
     </center>
 
-    <table class="striped">
+    <table class="table table-striped table-dark">
         <thead>
             <tr>
                 <th>Login do Cliente</th>
